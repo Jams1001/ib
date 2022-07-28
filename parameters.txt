@@ -1,0 +1,5 @@
+width: 10298
+height: 12452
+
+input image: input/IR.bmp
+output directory: output/

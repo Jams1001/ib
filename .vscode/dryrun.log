@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/jams/TCU/IR/IB'
+gcc main.c -o salida
+./salida
+rm salida
+echo "Waiting for 10 seconds..."
+sleep 10
+eog ./output/bintensity.bmp
+echo "Task Completed, Good bye"
+make: Leaving directory '/home/jams/TCU/IR/IB'
+ 

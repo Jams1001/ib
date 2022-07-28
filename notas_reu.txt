@@ -1,0 +1,73 @@
+bmp mapa de bits
+cad pixel tiene un byte de informacion, 8 bits
+un byte puede tener 256 valores diferentes [0, 255]. 256 colores distintos.
+
+Si una es de color 255 entonces es negra
+Si una imagen es de color 0 es blanca
+11111111 -> negra
+
+Sin embargo eso es muy poco. Por suerte estamos en escala de grises.
+
+Hay varias paletas. Paletas de 16 bits, paletas de 32 bits (conocida como colores
+verdaderos). En estas suben los bytes por pixel, sube el peso.
+El peso es muy grande con estas dimensiones, por eso existen los formatos
+de compresión de imagen. JPG, PNG, JPEG, GIF, BMP -> Fotografías con muchos
+píxeles, poco peso. Implica pérdida de calidad
+
+
+JPG por ejemplo agrupa zonas de colores similares.
+
+
+
+
+Básicamente la escala de grises es la intensidad de luz.
+Cuando se pasa una imagen a escala de grises se pasa una imagen RGB 
+a la intensidad lumínica de cada pixel en la imagen. Así que la escala de grises
+ya hace gran parte del trabajo.
+
+next steps: Tomar la imagen intensidad y manipularla tal vez con gradientes lineales
+se me ocurre(? De modo que yo modifique el umbral de intensidad lumínico que 
+es un valor que yo defino. Cada pixel se compara con este umbral. El programa
+lo que hará es que para cualquier pixel < Umbral, entonces póngalos en negro
+(intensidad = 0), si es mayor, then, intensidad máxima.
+
+
+Meter como un segmentador para separa la imagen
+
+
+	echo "Waiting for 4 seconds..."
+	sleep 4
+	eog ./output/intensity.bmp
+	echo "Task Completed, Good bye"
+
+
+
+Gray Scale
+G = 0.299R + 0.587G + 0.114B
+
+Min = R218 G185 B108 = 186.089   / no sirve 
+
+Max = R234 G211 B126 = 208.187   / no sirve
+
+Convertida
+
+Min: 186 / no sirve
+
+Max: 201 / no sirve
+
+bmp de la IR
+
+Min: 130
+Max: 144
+
+
+
+run1:
+	sed -i 's/="parameters2.txt";/="parameters1.txt";/' main.c
+	gcc main.c -o salida
+	./salida
+	rm salida
+	echo "Waiting for 6 seconds..."
+	sleep 6
+	eog ./output/intensity.bmp
+	echo "Task Completed, Good bye"

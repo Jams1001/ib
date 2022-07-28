@@ -1,0 +1,76 @@
+width: 237
+height: 210
+
+input image: input/fr.bmp
+output directory: output/
+    double umbrall_min = 145;
+    double umbrall_max = 150;
+
+width: 1032
+height: 618
+
+input image: input/fr2.bmp
+output directory: output/
+
+width: 1131
+height: 592
+
+input image: input/tr.bmp
+output directory: output/
+
+width: 648
+height: 491
+
+input image: input/key2.bmp
+output directory: output/
+
+
+width: 726
+height: 460
+
+input image: input/pu.bmp
+output directory: output/
+
+
+width: 1032
+height: 618
+
+input image: input/fr2.bmp
+output directory: output/
+
+
+width: 271
+height: 217
+
+input image: input/intensity.bmp
+output directory: output/
+    double umbrall_min = 190;
+    double umbrall_max = 202;
+
+
+
+------------------------------------
+width: 414
+height: 383
+
+input image: input/frFULL.bmp
+output directory: output/
+
+
+
+width: 1986
+height: 1089
+
+input image: input/trFULL.bmp
+output directory: output/
+
+
+
+width: 10298
+height: 12452
+
+input image: input/IR.bmp
+output directory: output/
+
+
+
