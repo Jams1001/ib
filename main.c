@@ -67,6 +67,7 @@ int main() {
 
     // Se lee el txt
     read_txt();
+    
 
     // Se reserva memoria para images_container
     p_images = (struct images_container *)malloc(sizeof(struct images_container));
@@ -260,8 +261,11 @@ int get_bintensity(unsigned char *pbn, char *filename) {
 // Esta funcion obtiene la binaria de intensidad de una cualquier imagen BMP
 void bintensity()
 {
-    int i,j;
+    int i, j;
+    int b = 0;
+    int w = 0;
     int width, height;
+    double p;
 
     // Se renombra por comodidad
     width = p_images->width;
@@ -276,19 +280,28 @@ void bintensity()
         for (i=0;i<width; i++) {
             if(p_images->prgb[3*j*width+3*i] >= umbrall_min && p_images->prgb[3*j*width+3*i] <= umbrall_max){
                 p_images->pbn[j*width+i] = (unsigned char)(0);
+                b = b+1;
             }
             else {
                 p_images->pbn[j*width+i] = (unsigned char)(255);
+                w = w+1;
             }
-            }
-        }
+         }
     }
- 
+    p = (b*100.0f)/(w+b);
+    printf("\n");
+    printf("\n");
+    printf("El porcentaje de boceto es: %f %%", p);
+    printf("\n");
+    printf("\n");
+}
+
 // Esta funcion lee los parametros de archivo de parametros de control
 void read_txt() {
     FILE *archivo;
     char d1[256], d2[256], d3[256];
     int res;
+    double p = 3.31; 
 
     //Abriendo archivo en mode de lectura
     char nombreDeArchivo[256]="parameters.txt";
