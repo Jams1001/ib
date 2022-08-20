@@ -288,10 +288,14 @@ void bintensity()
             }
          }
     }
-    p = (b*100.0f)/(w+b);
+    int t = w+b;
+    p = (b*100.0f)/(t);
     printf("\n");
     printf("\n");
     printf("El porcentaje de boceto es: %f %%", p);
+    printf("\n");
+    printf("\n");
+    printf("Los pixeles pintados con intensidad boceto son %d para un total de %d pixeles", b, t);
     printf("\n");
     printf("\n");
 }
